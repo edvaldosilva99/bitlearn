@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitLearn | Tecnologia e Educação</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET BÁSICO: Remove espaços padrão do navegador */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f1a; /* Fundo azul marinho profundo */
+            color: #ffffff;
+            scroll-behavior: smooth; /* Deixa o deslize entre as páginas suave */
+            overflow-x: hidden;
+        }
+
+        /* BRILHO DE FUNDO: Manchas de luz coloridas para dar profundidade */
+        .glow-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #2563eb12, transparent 50%),
+                        radial-gradient(circle at 10% 90%, #5eead408, transparent 40%);
+            z-index: -1;
+        }
+
+        /* --- CABEÇALHO: Onde fica a Logo Secundária (com nome) --- */
+        header {
+            position: fixed; /* Deixa o menu sempre visível no topo */
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 26, 0.8); /* Fundo semi-transparente */
+            backdrop-filter: blur(10px); /* Efeito de vidro embaçado moderno */
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo-header {
+            height: 45px; /* Tamanho da logo com nome no topo */
+            filter: drop-shadow(0 0 10px rgba(94, 234, 212, 0.3));
+        }
+
+        /* --- PRIMEIRA PÁGINA: Destaque com a Logo Principal (Ícone) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        /* Logo Pura (Ícone circular) grande e animada */
+        .main-icon {
+            height: 200px; 
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 30px rgba(94, 234, 212, 0.5));
+            animation: float 4s ease-in-out infinite; /* Ativa a animação abaixo */
+        }
+
+        /* Efeito de flutuar da logo principal */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            background: linear-gradient(90deg, #fff, #5eead4, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .btn-scroll {
+            background: linear-gradient(90deg, #5eead4, #2563eb);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-scroll:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(94, 234, 212, 0.5);
+        }
+
+        /* --- SEGUNDA PÁGINA: EQUIPE --- */
+        .team-section {
+            min-height: 100vh;
+            padding: 120px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 50px;
+        }
+
+        /* Estilo dos Cards dos Participantes */
+        .member-card {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 40px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: #5eead466;
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        .member-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid #2563eb;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        .member-card h4 { font-size: 1.2rem; margin-bottom: 5px; }
+        .member-card p { color: #5eead4; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <header>
+        <img src="logo-completa.png" class="logo-header" alt="BitLearn Logo Completa">
+        <span style="font-size: 0.8rem; color: #94a3b8;">ODS 4 - ONU</span>
+    </header>
+
+    <section class="hero">
+        <img src="icone.png" class="main-icon" alt="BitLearn Ícone">
+        <h1>BitLearn</h1>
+        <p style="color: #94a3b8; margin-bottom: 30px;">Onde cada bit de conhecimento constrói o futuro.</p>
+        <a href="#equipe" class="btn-scroll">CONHECER EQUIPE</a>
+    </section>
+
+    <section id="equipe" class="team-section">
+        <h2 style="font-size: 2.5rem;">Nossa Equipe</h2>
+        <div class="team-grid">
+            
+            <div class="member-card">
+                <img src="p1.png" class="member-img">
+                <h4>Edvaldo silva</h4>
+                <p>Design & UI</p>
+            </div>
+
+            <div class="member-card">
+                <img src="p2.png" class="member-img">
+                <h4>Yuri</h4>
+                <p>Desenvolvedor</p>
+            </div>
+
+            <div class="member-card">
+                <img src="p3.png" class="member-img">
+                <h4>Rennan</h4>
+                <p>Gestor</p>
+            </div>
+
+            <div class="member-card">
+                <img src="p4.png" class="member-img">
+                <h4>Flávio barros</h4>
+                <p>Análise de Dados</p>
+            </div>
+
+            <div class="member-card">
+                <img src="p5.png" class="member-img">
+                <h4>Vittor Gabriel</h4>
+                <p>Pesquisa</p>
+            </div>
+
+            <div class="member-card">
+                <img src="p6.png" class="member-img">
+                <h4>Gabriel</h4>
+                <p>Marketing</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
